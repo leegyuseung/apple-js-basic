@@ -8,12 +8,21 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="alert-box" id="alert">알림창</div>
-    <button onclick="document.getElementById('alert').style.display='block'">
-      열기
-    </button>
-    <button onclick="document.getElementById('alert').style.display='none'">
-      닫기
-    </button>
+    <div class="alert-box" id="alert">
+      <button onclick="closeA()">닫기</button> 알림창
+    </div>
+    <button onclick="openA()">열기</button>
+
+    <script>
+      function openA() {
+        console.log("open");
+        document.getElementById("alert").style.display = "block";
+      }
+
+      function closeA() {
+        console.log("close");
+        document.getElementById("alert").style.display = "none";
+      }
+    </script>
   </body>
 </html>
