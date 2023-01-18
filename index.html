@@ -9,19 +9,20 @@
   </head>
   <body>
     <div class="alert-box" id="alert">
-      <button onclick="closeA()">닫기</button> 알림창
+      <p id="textp"></p>
+      <button onclick="alertOpen('none')">닫기</button>
     </div>
-    <button onclick="openA()">열기</button>
+    <button onclick="alertOpen('block','아이디입력하세요')">버튼1</button>
+    <button onclick="alertOpen('block','비밀번호입력하세요')">버튼2</button>
 
     <script>
-      function openA() {
-        console.log("open");
-        document.getElementById("alert").style.display = "block";
+      function alertOpen(a, b = "") {
+        document.getElementById("alert").style.display = a;
+        document.getElementById("textp").innerText = b;
       }
 
-      function closeA() {
-        console.log("close");
-        document.getElementById("alert").style.display = "none";
+      function plus(a, b) {
+        return a + b;
       }
     </script>
   </body>
