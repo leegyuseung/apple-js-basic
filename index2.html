@@ -12,6 +12,13 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="main.css" />
 
     <title>Hello, world!</title>
@@ -34,11 +41,25 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
+    <p class="hello">안녕</p>
+    <p class="hello">안녕</p>
+    <p class="hello">안녕</p>
+    <button id="test-btn">버튼</button>
     <script>
+      // document.querySelector("#test-btn").addEventListener();
+      $("#test-btn").on("click", function () {
+        $(".hello").hide(); //slideUp()
+      });
+
+      // document.querySelector(".hello").innerHTML = "바보";
+      // jqeury로 안녕을 3개 전부 바보로 바꾸기
+      $(".hello").html("바보");
+      $(".hello").css("color", "red");
+      $(".hello").addClass("show"); //removeClass toggleClass
+
       // document.querySelector(".list-group")
       // document.querySelector("#test1")
       // document.querySelectorAll(".list-group-item")[1]
-
       document
         .getElementsByClassName("navbar-toggler")[0]
         .addEventListener("click", function () {
