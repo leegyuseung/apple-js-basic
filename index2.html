@@ -41,32 +41,24 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <button id="test-btn">버튼</button>
+    <div id="modal">
+      <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
+          <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+      </div>
+    </div>
+
+    <button id="open">열기</button>
+
     <script>
-      // document.querySelector("#test-btn").addEventListener();
-      $("#test-btn").on("click", function () {
-        $(".hello").hide(); //slideUp()
+      $("#open").on("click", function () {
+        $("#modal").show();
       });
-
-      // document.querySelector(".hello").innerHTML = "바보";
-      // jqeury로 안녕을 3개 전부 바보로 바꾸기
-      $(".hello").html("바보");
-      $(".hello").css("color", "red");
-      $(".hello").addClass("show"); //removeClass toggleClass
-
-      // document.querySelector(".list-group")
-      // document.querySelector("#test1")
-      // document.querySelectorAll(".list-group-item")[1]
-      document
-        .getElementsByClassName("navbar-toggler")[0]
-        .addEventListener("click", function () {
-          document
-            .getElementsByClassName("list-group")[0]
-            .classList.toggle("show");
-        });
+      $("#close").on("click", function () {
+        $("#modal").hide();
+      });
     </script>
 
     <script
