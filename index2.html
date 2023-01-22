@@ -72,9 +72,13 @@
       $("#close").on("click", function () {
         $("#modal").hide();
       });
-      $("#submit").on("click", function () {
+      $("#submit").on("click", function (e) {
         if (document.getElementById("idd").value == "") {
           alert("아이디 입력 안했습니다.");
+          e.preventDefault();
+        } else if (document.getElementById("pww").value.length < 6) {
+          alert("비밀번호가 6글자 이하입니다.");
+          e.preventDefault();
         }
       });
     </script>
