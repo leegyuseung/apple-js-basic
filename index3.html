@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Game369(num) {
+        if (num % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+      function Game369Double(num) {
+        if (num % 3 == 0) {
+          console.log("박수");
+          if (num % 9 == 0) {
+            console.log("박수X2");
+          }
+        }
+      }
+      function Pass(a, b) {
+        if (a < 40 || b < 40) {
+          if (a + b >= 120) {
+            console.log("합격");
+          } else {
+            console.log("불합격");
+          }
+          console.log("불합격");
+        }
+      }
+    </script>
+  </body>
+</html>
