@@ -65,14 +65,25 @@
     </div>
 
     <button id="open">로그인</button>
+    <div class="alert alert-danger">5초 이 구매시 사은품 증정!</div>
 
     <script>
+      setTimeout(function () {
+        $(".alert").hide();
+      }, 5000);
+
+      setInterval(function () {
+        console.log("1초마다 안녕");
+      }, 1000);
+
       $("#open").on("click", function () {
         $("#modal").show();
       });
+
       $("#close").on("click", function () {
         $("#modal").hide();
       });
+
       $("#submit").on("click", function (e) {
         if (document.getElementById("idd").value == "") {
           alert("아이디 입력 안했습니다.");
