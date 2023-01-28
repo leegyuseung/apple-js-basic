@@ -107,6 +107,15 @@
         } else if (document.getElementById("pww").value.length < 6) {
           alert("비밀번호가 6글자 이하입니다.");
           e.preventDefault();
+        } else if (
+          /\S+@\S+.\S+/.test(document.getElementById("idd").value) == false
+        ) {
+          alert("이메일 형식이 아닙니다.");
+          e.preventDefault();
+        } else if (
+          /[A-Z]/.test(document.getElementById("pww").value) == false
+        ) {
+          alert("비밀번호에 대문자가 포함 안되어있습니다.");
         }
       });
 
