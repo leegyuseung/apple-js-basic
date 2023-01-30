@@ -94,22 +94,20 @@
     </div>
 
     <script>
-      window.addEventListener("scroll", function () {
-        // window.scrollY
-        // window.scrollTo(x,y)
-        // window.scrollBy(0,100)
-      });
-
       $(window).on("scroll", function () {
-        $(window).scrollTop();
+        if (window.scrollY > 100) {
+          $(".navbar-brand").css("font-size", "20px");
+        } else {
+          $(".navbar-brand").css("font-size", "25px");
+        }
       });
 
-      document.querySelector(".lorem").addEventListener("scroll", function () {
+      $(".lorem").on("scroll", function () {
         var a = document.querySelector(".lorem").scrollTop;
         var b = document.querySelector(".lorem").scrollHeight;
-        var h = document.querySelector(".lorem").clientHeight;
-        // a + h == b
-        console.log(a, b);
+        var c = document.querySelector(".lorem").clientHeight;
+        if (a + c > b - 100) {
+        }
       });
     </script>
 
