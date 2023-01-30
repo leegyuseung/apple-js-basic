@@ -83,6 +83,36 @@
     <button class="slide-3">3</button>
     <button class="next">다음</button>
     <button class="before">이전</button>
+
+    <div style="height: 1000px"></div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maiores
+      corporis facilis consectetur? Quidem deleniti, sit sed iure placeat rerum,
+      debitis quibusdam vel exercitationem, fuga id! Laborum, perferendis nemo?
+      Similique?
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        // window.scrollY
+        // window.scrollTo(x,y)
+        // window.scrollBy(0,100)
+      });
+
+      $(window).on("scroll", function () {
+        $(window).scrollTop();
+      });
+
+      document.querySelector(".lorem").addEventListener("scroll", function () {
+        var a = document.querySelector(".lorem").scrollTop;
+        var b = document.querySelector(".lorem").scrollHeight;
+        var h = document.querySelector(".lorem").clientHeight;
+        // a + h == b
+        console.log(a, b);
+      });
+    </script>
+
     <script>
       // $(".slide-1").on("click", function () {
       //   $(".slide-container").css("transform", "translateX(0)");
