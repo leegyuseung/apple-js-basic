@@ -40,6 +40,7 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
       <select class="form-select mt-2 form-hide">
         <option>95</option>
@@ -47,12 +48,27 @@
       </select>
     </form>
 
+    <div id="test"><h4>반가워</h4></div>
+
     <script>
+      // var a = document.createElement("p");
+      // a.innerHTML = "안녕";
+      // document.querySelector("#test").appendChild(a);
+
+      var template = "<p>안녕</p>";
+      document.querySelector("#test").insertAdjacentHTML("beforeend", template);
+      $("#test").append(template);
+
       $(".form-select")
         .eq(0)
         .on("input", function (e) {
           if (e.currentTarget.value == "셔츠") {
             $(".form-select").eq(1).removeClass("form-hide");
+          } else if (e.currentTarget.value == "바지") {
+            $(".form-select").eq(1).removeClass("form-hide");
+            var template2 = `<option>29</option>
+            <option>30</option>`;
+            $(".form-select").eq(1).html(template2);
           }
         });
     </script>
