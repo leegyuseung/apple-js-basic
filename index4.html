@@ -59,6 +59,9 @@
       document.querySelector("#test").insertAdjacentHTML("beforeend", template);
       $("#test").append(template);
 
+      var pants = [28, 30, 32, 34];
+      var shirts = [95, 100, 105];
+
       $(".form-select")
         .eq(0)
         .on("input", function (e) {
@@ -66,11 +69,17 @@
             $(".form-select").eq(1).removeClass("form-hide");
           } else if (e.currentTarget.value == "바지") {
             $(".form-select").eq(1).removeClass("form-hide");
-            var template2 = `<option>29</option>
-            <option>30</option>`;
-            $(".form-select").eq(1).html(template2);
+            $(".form-select").eq(1).html("");
+            pants.forEach(function (a) {
+              $(".form-select").eq(1).append(`<option>${a}</option>`);
+            });
           }
         });
+
+      var obj = { name: "kim", age: 20 };
+      for (var key in obj) {
+        console.log(key);
+      }
     </script>
 
     <div class="container mt-5">
