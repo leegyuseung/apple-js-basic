@@ -22,57 +22,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="card-group container">
-      <div class="card">
-        <img src="https://via.placeholder.com/600" />
-        <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
           <h5>Card title</h5>
           <p>가격 : 70000</p>
-          <button class="btn btn-danger">주문하기</button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/600" />
-        <div class="card-body">
-          <h5>Card title</h5>
-          <p>가격 : 70000</p>
-          <button class="btn btn-danger">주문하기</button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/600" />
-        <div class="card-body">
-          <h5>Card title</h5>
-          <p>가격 : 70000</p>
-          <button class="btn btn-danger">주문하기</button>
-        </div>
+        </div> -->
       </div>
     </div>
-
-    <script>
-      // $.get("https://codingapple1.github.io/price.json")
-      //   .done(function (data) {
-      //     console.log(data.price);
-      //   })
-      //   .fail(function () {
-      //     console.log("실패");
-      //   });
-
-      // $.post("https://codingapple1.github.io/hello.txt", { name: "kim" }).done(
-      //   function (data) {
-      //     console.log(data);
-      //   }
-      // );
-
-      fetch("https://codingapple1.github.io/price.json")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    </script>
 
     <script>
       var products = [
@@ -81,18 +39,49 @@
         { id: 2, price: 60000, title: "Black Monastery" },
       ];
 
-      for (let i = 0; i < products.length; i++) {
-        $(".card-body h5").eq(i).html(products[i].title);
-        $(".card-body p")
-          .eq(i)
-          .html("가격:" + products[i].price);
-      }
-      // document.querySelectorAll(".card-body h5")[0].innerHTML =
-      //   products[0].title;
-      // document.querySelectorAll(".card-body h5")[0].innerHTML =
-      //   "가격은" + products[0].price;
+      products.forEach((data) => {
+        var template = `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
+          <h5>${data.title}</h5>
+          <p>가격 : ${data.price}</p>
+          </div>`;
+        $(".row").append(template);
+      });
     </script>
 
+    <div class="container">
+      <button class="btn btn-danger" id="more">더보기</button>
+    </div>
+
+    <script>
+      var count = 0;
+      $("#more").click(function () {
+        count++;
+        if (count == 1) {
+          $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
+            data.forEach((data) => {
+              var template = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${data.title}</h5>
+            <p>가격 : ${data.price}</p>
+            </div>`;
+              $(".row").append(template);
+            });
+          });
+        } else {
+          $.get("https://codingapple1.github.io/js/more2.json").done((data) => {
+            data.forEach((data) => {
+              var template = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${data.title}</h5>
+            <p>가격 : ${data.price}</p>
+            </div>`;
+              $(".row").append(template);
+            });
+          });
+        }
+      });
+    </script>
     <script src="index4.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
