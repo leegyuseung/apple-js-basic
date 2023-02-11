@@ -50,6 +50,31 @@
     </div>
 
     <script>
+      // $.get("https://codingapple1.github.io/price.json")
+      //   .done(function (data) {
+      //     console.log(data.price);
+      //   })
+      //   .fail(function () {
+      //     console.log("실패");
+      //   });
+
+      // $.post("https://codingapple1.github.io/hello.txt", { name: "kim" }).done(
+      //   function (data) {
+      //     console.log(data);
+      //   }
+      // );
+
+      fetch("https://codingapple1.github.io/price.json")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+
+    <script>
       var products = [
         { id: 0, price: 70000, title: "Blossom Dress" },
         { id: 1, price: 50000, title: "Springfield Shirt" },
