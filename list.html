@@ -51,10 +51,39 @@
 
     <div class="container">
       <button class="btn btn-danger" id="more">더보기</button>
+      <button class="btn btn-primary" id="sort">정렬</button>
     </div>
 
     <script>
       var count = 0;
+      $("#sort").click(function () {
+        products.sort(function (a, b) {
+          return a.price - b.price;
+        });
+
+        $(".row").html("");
+
+        products.forEach((data) => {
+          var template = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100" />
+            <h5>${data.title}</h5>
+            <p>가격 : ${data.price}</p>
+            </div>`;
+          $(".row").append(template);
+        });
+      });
+
+      // filter
+      var arr = [7, 3, 5, 2, 40];
+      var newArr = arr.filter(function (a) {
+        return a < 4;
+      });
+
+      // map
+      var newArr2 = arr.map(function (a) {
+        return a * 4;
+      });
+
       $("#more").click(function () {
         count++;
         if (count == 1) {
