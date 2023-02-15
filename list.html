@@ -49,6 +49,18 @@
         $(".row").append(template);
       });
 
+      $(".buy").click(function (e) {
+        // siblings : 형제요소 가져오기
+        var title = $(e.target).siblings("h5").text();
+        if (localStorage.getItem("cart") != null) {
+          var data = JSON.parse(localStorage.cart);
+          data.push(title);
+          localStorage.setItem("cart", JSON.stringify(data));
+        } else {
+          localStorage.setItem("cart", JSON.stringify([title]));
+        }
+      });
+
       // 자료 저장하기
       // localStorage.setItem("이름", "kim");
       // 자료 꺼내오기
@@ -57,12 +69,12 @@
       // localStorage.removeItem('이름')
 
       // array, object 저장은 json 사용
-      var arr = [1, 2, 3];
-      var newArr = JSON.stringify(arr);
-      localStorage.setItem("num", newArrarr);
+      // var arr = [1, 2, 3];
+      // var newArr = JSON.stringify(arr);
+      // localStorage.setItem("num", newArrarr);
 
-      var newData = localStorage.getItem("num");
-      var newData2 = JSON.parse(newArr2);
+      // var newData = localStorage.getItem("num");
+      // var newData2 = JSON.parse(newArr2);
     </script>
 
     <div class="container">
