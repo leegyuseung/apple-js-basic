@@ -44,9 +44,25 @@
           <img src="https://via.placeholder.com/600" class="w-100" />
           <h5>${data.title}</h5>
           <p>가격 : ${data.price}</p>
+          <button class="buy">구매</button>
           </div>`;
         $(".row").append(template);
       });
+
+      // 자료 저장하기
+      // localStorage.setItem("이름", "kim");
+      // 자료 꺼내오기
+      // localStorage.getItem('이름')
+      // 자료 삭제하기
+      // localStorage.removeItem('이름')
+
+      // array, object 저장은 json 사용
+      var arr = [1, 2, 3];
+      var newArr = JSON.stringify(arr);
+      localStorage.setItem("num", newArrarr);
+
+      var newData = localStorage.getItem("num");
+      var newData2 = JSON.parse(newArr2);
     </script>
 
     <div class="container">
