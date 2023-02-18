@@ -53,3 +53,21 @@
   font-size: 30px;
   transition: all 1s;
 }
+
+.grey {
+  background: lightgrey;
+  height: 2000px;
+  margin-top: 500px;
+}
+
+.image {
+  position: sticky;
+  float: right;
+  width: 400px;
+  top: 100px;
+}
+
+.text {
+  float: left;
+  width: 300px;
+}
